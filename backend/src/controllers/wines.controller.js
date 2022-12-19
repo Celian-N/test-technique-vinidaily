@@ -1,10 +1,15 @@
 const { getDb } = require("../db");
 
-getWines = async () => {
+getWines = async (filter) => {
   const database = getDb();
   const winesCollection = database.collection("wines");
-
-  return await (await winesCollection.find()).toArray();
+  const nPerPage = 30;
+  return await (
+    await winesCollection
+      .find()
+      .skip(filter.page > 0 ? (filter.page - 1) * nPerPage : 0)
+      .limit(nPerPage)
+  ).toArray();
 };
 
 module.exports = {
