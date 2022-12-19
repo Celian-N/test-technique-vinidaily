@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
+const winesRouter = require("./routes/wines.router");
 
 const { initDb } = require("./db");
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use('/wines', winesRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
