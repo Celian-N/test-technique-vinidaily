@@ -1,0 +1,45 @@
+.wine-item {
+  display: flex;
+  flex-direction: row;
+}
+.wine-item > img {
+  width: 30%;
+}
+
+.wine-item .wine__informations {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wine__informations--title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.wine-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wine-infos span {
+  font-weight: bold;
+  white-space: nowrap;
+}
+.wine-infos div {
+  margin-left: 10px;
+}
+
+.wine__informations > div {
+  margin-bottom: 10px;
+}
+
+.movie__description--description {
+  font-style: italic;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

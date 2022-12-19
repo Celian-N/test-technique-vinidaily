@@ -1,4 +1,5 @@
 export interface Wine {
+  _id: string;
   millesimed: boolean;
   year: number;
   grapeVarieties: string;
